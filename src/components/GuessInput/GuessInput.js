@@ -1,6 +1,6 @@
 import React from "react";
 
-function GuessInput({ addGuess }) {
+function GuessInput({ addGuess, disabled }) {
   const [guess, setGuess] = React.useState("");
 
   return (
@@ -22,6 +22,7 @@ function GuessInput({ addGuess }) {
         maxLength={5}
         pattern="[A-Z]{5}"
         title="5 letter word"
+        disabled={disabled}
         onChange={(event) => setGuess(event.target.value.toUpperCase())}
       ></input>
     </form>
